@@ -1,0 +1,35 @@
+HTML {
+
+}
+
+body {
+  background-color: darkslategrey;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 150px;
+}
+
+.valid {
+
+}
+
+.invalid {
+
+}
+
+.listUnit {
+  background-color: aquamarine;
+}
+
+#btnsubmit {
+
+}
+
+#formcadastro {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 20px;
+}
