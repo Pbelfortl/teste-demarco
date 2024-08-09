@@ -22,7 +22,8 @@ function list () {
     console.log("i")
     box.innerHTML += `<div class="listUnit" id = ${i}> Nome: ${person.name} | 
     idade: ${person.age} | 
-    telefone: ${person.phone} 
+    telefone: ${person.phone}
+    <button onclick="activateEdit(${i})">editar</button>
     <button onclick="deleteData(${i})">remover</button>
     </div>`
   })
@@ -36,6 +37,33 @@ function deleteData (index) {
   if(confirmation){
     listData.splice(index, 1)
   }
+
+  list()
+}
+
+function activateEdit (index) {
+
+  const element = document.getElementById(index)
+
+  element.innerHTML = `
+  <form onsubmit="editData(${index}); return false">
+    <input class="nameEdit" placeholder="Nome" type="text" value="${listData[index].name}" required>
+    <input class="ageEdit" placeholder="Idade" type="number" value="${listData[index].age}" required>
+    <input class="phoneEdit" placeholder="Telefone" type="number" value="${listData[index].phone}" required>
+    <button type="submit">Salvar</button>
+  </form>
+  `
+}
+
+function editData (index) {
+
+  const name = document.querySelector('.nameEdit').value
+  const age = document.querySelector('.ageEdit').value
+  const phone = document.querySelector('.phoneEdit').value
+
+  listData[index].name = name
+  listData[index].age = age
+  listData[index].phone = phone
 
   list()
 }

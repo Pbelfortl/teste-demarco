@@ -4,11 +4,12 @@ HTML {
 
 body {
   background-color: darkslategrey;
-  height: 100vh;
+  height: 98vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-inline: 150px;
+  justify-content: center;
+  padding-inline: 15vw;
+  gap: 100px;
 }
 
 .valid {
@@ -19,8 +20,23 @@ body {
 
 }
 
+.listBox {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 2px, solid white;
+  width: 30vw;
+  height: 30vh;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 .listUnit {
-  background-color: aquamarine;
+  background-color: rgb(49, 184, 127);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #btnsubmit {
