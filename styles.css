@@ -7,17 +7,19 @@ body {
   height: 98vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding-inline: 15vw;
-  gap: 100px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .valid {
-
+  border: solid 2px rgb(7, 247, 7);
+  outline: rgb(7, 247, 7);
 }
 
 .invalid {
-
+  border: solid red 2px;
+  outline: rgb(184, 31, 31);
 }
 
 .listBox {
@@ -25,11 +27,12 @@ body {
   display: flex;
   flex-direction: column;
   border: 2px, solid white;
-  width: 30vw;
-  height: 30vh;
+  width: 35vw;
+  height: 35vh;
   gap: 15px;
   padding: 10px;
   border-radius: 5px;
+  overflow-y: scroll;
 }
 
 .listUnit {
@@ -37,9 +40,16 @@ body {
   border-radius: 3px;
   display: flex;
   justify-content: space-between;
+  padding: 3px;
+  gap: 10px;
 }
 
 #btnsubmit {
+
+}
+
+.button {
+
 
 }
 

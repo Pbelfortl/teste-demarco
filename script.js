@@ -3,14 +3,33 @@ const listData = [{name: "Maria", age: 25, phone: 99999999}]
 
 function includeData () {
 
-  let box = document.querySelector('.listBox')
-  const name = document.querySelector('.name').value
+  const name = document.querySelector('.name')
   const age = document.querySelector('.age').value
   const phone = document.querySelector('.phone').value
 
-  listData.push({name:name, age:age, phone:phone})  
+  if(name.value.length < 3) {
+    alert("O nome precisa ter ao menos 3 caracteres")
+    return
+  }
+
+  listData.push({name:name.value, age:age, phone:phone})
 
   list()
+}
+
+function validateData () {
+
+  const name = document.querySelector('.name')
+  const age = document.querySelector('.age')
+  const phone = document.querySelector('.phone')
+
+  if(name.value.length <= 2) {
+    name.classList.remove("valid")
+    name.classList.add("invalid")
+  } else {
+    name.classList.remove("invalid")
+    name.classList.add("valid")
+  }
 }
 
 function list () {
@@ -19,9 +38,8 @@ function list () {
   box.innerHTML = ''
 
   listData.forEach((person, i) => {
-    console.log("i")
-    box.innerHTML += `<div class="listUnit" id = ${i}> Nome: ${person.name} | 
-    idade: ${person.age} | 
+    box.innerHTML += `<div class="listUnit" id = ${i}> Nome: ${person.name} \n 
+    idade: ${person.age} \n
     telefone: ${person.phone}
     <button onclick="activateEdit(${i})">editar</button>
     <button onclick="deleteData(${i})">remover</button>
@@ -34,9 +52,7 @@ function deleteData (index) {
 
   const confirmation = confirm("Tem certeza que deseja excluir?")
 
-  if(confirmation){
-    listData.splice(index, 1)
-  }
+  confirmation && listData.splice(index, 1)
 
   list()
 }
@@ -49,8 +65,9 @@ function activateEdit (index) {
   <form onsubmit="editData(${index}); return false">
     <input class="nameEdit" placeholder="Nome" type="text" value="${listData[index].name}" required>
     <input class="ageEdit" placeholder="Idade" type="number" value="${listData[index].age}" required>
-    <input class="phoneEdit" placeholder="Telefone" type="number" value="${listData[index].phone}" required>
+    <input class="phoneEdit" placeholder="Telefone" type="tel" maxlength="11" value="${listData[index].phone}" required>
     <button type="submit">Salvar</button>
+    <button onclick="list()">Cancelar</button>
   </form>
   `
 }

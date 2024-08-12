@@ -4,21 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Document</title>
+  <title>Teste Demarco</title>
 </head>
 <body onload="list()">
   
   <form id="formcadastro" onsubmit="includeData(); return false">
-    <input class="name" placeholder="Nome" type="text" required>
-    <input class="age" placeholder="Idade" type="number" required>
-    <input class="phone" placeholder="Telefone" type="number" required>
-    <button type="submit">Salvar</button>
+    <input class="name" placeholder="Nome" type="text" onkeydown="validateData()" required>
+    <input class="age" placeholder="Idade" type="number" min="1" required>
+    <input class="phone" placeholder="Telefone" type="tel" maxlength="11" required>
+    <button type="submit" id="btnsubmit">Salvar</button>
     <button type="reset">Limpar</button>
   </form>
 
-  <div class="listBox">
-
-  </div>
+  <div class="listBox"></div>
 
   <script src="script.js"></script>
 </body>
