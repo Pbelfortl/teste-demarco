@@ -19,7 +19,7 @@ body {
 
 .invalid {
   border: solid red 2px;
-  outline: rgb(184, 31, 31);
+  outline: rgb(214, 33, 33);
 }
 
 .listBox {
@@ -36,21 +36,24 @@ body {
 }
 
 .listUnit {
+  color: white;
   background-color: rgb(49, 184, 127);
   border-radius: 3px;
   display: flex;
   justify-content: space-between;
-  padding: 3px;
+  align-items: center;
+  padding: 5px;
   gap: 10px;
 }
 
 #btnsubmit {
-
+  background-color: rgb(163, 236, 212);
 }
 
 .button {
-
-
+  margin: 8px;
+  border-radius: 4px;
+  padding: 5px;
 }
 
 #formcadastro {

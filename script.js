@@ -38,11 +38,13 @@ function list () {
   box.innerHTML = ''
 
   listData.forEach((person, i) => {
-    box.innerHTML += `<div class="listUnit" id = ${i}> Nome: ${person.name} \n 
-    idade: ${person.age} \n
+    box.innerHTML += `<div class="listUnit" id = ${i}> Nome: ${person.name} <br/>
+    idade: ${person.age} <br/>
     telefone: ${person.phone}
-    <button onclick="activateEdit(${i})">editar</button>
-    <button onclick="deleteData(${i})">remover</button>
+      <div>
+        <button class="button" onclick="activateEdit(${i})">editar</button>
+        <button class="button" onclick="deleteData(${i})">remover</button>
+      </div>
     </div>`
   })
 }
